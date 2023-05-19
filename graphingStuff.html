@@ -303,11 +303,139 @@
 		function showPlotAll(){
 			// w/out centroids
 
+				d3.csv('https://raw.githubusercontent.com/lcenvs/3D-Graphing-With-Plotly-EcoTypes22-23-N2712/main/ETAll.csv', function(err, rows){
+				function unpack(rows, key, filter){
+					f=filterRows(rows,filter)
+					return f.map(function(f){return f[key];});
+				}
+				ET01Trace = {
+					name: ET01Label,
+					x:unpack(rows, 'Place (x)', ET01Label),
+					y:unpack(rows, 'Knowledge (y)', ET01Label),
+					z:unpack(rows, 'Action (z)', ET01Label),
+					mode: 'markers',
+					marker: {
+						size: AttSize,
+						opacity: 1.0,
+						line: {
+      						color: '#000000',
+      						width: AttLine
+   						}
+					},
+					type: 'scatter3d',
+					legendgroup: 'attractors'
+				};
+				ET02Trace = {
+					name: ET02Label,
+					x:unpack(rows, 'Place (x)', ET02Label),
+					y:unpack(rows, 'Knowledge (y)', ET02Label),
+					z:unpack(rows, 'Action (z)', ET02Label),
+					mode: 'markers',
+					marker: {
+						size: AttSize,
+						opacity: 1.0,
+						line: {
+      						color: '#000000',
+      						width: AttLine
+   						}
+					},
+					type: 'scatter3d',
+					legendgroup:  'attractors'
+				};
+				ET03Trace = {
+					name: ET03Label,
+					x:unpack(rows, 'Place (x)', ET03Label),
+					y:unpack(rows, 'Knowledge (y)', ET03Label),
+					z:unpack(rows, 'Action (z)', ET03Label),
+					mode: 'markers',
+					marker: {
+						size: AttSize,
+						opacity: 1.0,
+						line: {
+      						color: '#000000',
+      						width: AttLine
+   						}
+					},
+					type: 'scatter3d',
+					legendgroup:  'attractors'
+				};
+				ET04Trace = {
+					name: ET04Label,
+					x:unpack(rows, 'Place (x)', ET04Label),
+					y:unpack(rows, 'Knowledge (y)', ET04Label),
+					z:unpack(rows, 'Action (z)', ET04Label),
+					mode: 'markers',
+					marker: {
+						size: AttSize,
+						opacity: 1.0,
+						line: {
+      						color: '#000000',
+      						width: AttLine
+   						}
+					},
+					type: 'scatter3d',
+					legendgroup:  'attractors'
+				};
+				ET05Trace = {
+					name: ET05Label,
+					x:unpack(rows, 'Place (x)', ET05Label),
+					y:unpack(rows, 'Knowledge (y)', ET05Label),
+					z:unpack(rows, 'Action (z)', ET05Label),
+					mode: 'markers',
+					marker: {
+						size: AttSize,
+						opacity: 1.0,
+						line: {
+      						color: '#000000',
+      						width: AttLine
+   						}
+					},
+					type: 'scatter3d',
+					legendgroup:  'attractors'
+				};
+
+				var data = [ET01Trace, ET02Trace, ET03Trace, ET04Trace, ET05Trace ];
+				var layout = {
+
+
+					showlegend: true,
+				  legend: {
+				    x: 1,
+				    y: 0.5
+				  },
+					colorway: [ET01Color, ET02Color, ET03Color, ET04Color, ET05Color],
+
+					scene: {
+						xaxis:{
+							title: 'Place (x)',
+							range: [-1, 1]
+						},
+						yaxis:{
+							title: 'Knowledge (y)',
+							range: [-1, 1]
+						},
+						zaxis:{
+							title: 'Action (z)',
+							range: [-1, 1]
+						},
+						},
+					margin: {
+					l: 0,
+					r: 0,
+					b: 0,
+					t: 0
+
+				}};
+
 				d3.csv('https://raw.githubusercontent.com/lcenvs/3D-Graphing-With-Plotly-EcoTypes22-23-N2712/main/ETAll.csv', function(err, rows2){
 					function unpack2(rows2, key, filter){
 						f=filterRows(rows2,filter)
 						return f.map(function(f){return f[key];});
 					}
+									function unpack(rows, key, filter){
+					f=filterRows(rows,filter)
+					return f.map(function(f){return f[key];});
+				}
 					ET01Trace2 = {
 						name: ET01Label,
 						x:unpack2(rows2, 'Place (x)', ET01Label),
