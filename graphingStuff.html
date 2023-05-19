@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<head>
+	<style>
+	#title{
+		text-align: center;
+		margin-top: 20px;
+		font-family: Montserrat, Helvetica, Arial, sans-serif;
+		font-weight: 500;
+	}
+	</style>
+	<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<script src="https://cdn.plot.ly/plotly-2.3.0.min.js"></script>
+	<script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+	<script>
+		var ET01Label = "Earth Spirit";
+		var ET02Label = "Ecoscience";
+		var ET03Label = "Technoprogress";
+		var ET04Label = "Traditional Ways";
+		var ET05Label = "Boundary";
+		var ET01Color = "#ffa600";
+		var ET02Color = "#ff6361";
+		var ET03Color = "bc5090";
+		var ET04Color = "#58508d";
+		var ET05Color = "#003f5c";
+		var AttSize = 15;
+		var AttLine = 2;
+
+
+		function filterRows(rows, type){
+			x=rows.filter(function(d){ return d.ETName == type })
+			return x;
+
+		}
+
+		function ET01Plot(){
+			document.getElementById('plot').innerHTML = "";
+			d3.csv('https://raw.githubusercontent.com/lcenvs/3D-Graphing-With-Plotly-EcoTypes22-23-N2712/main/ETAll.csv', function(err, rows){
+				function unpack(rows, key, filter){
+					f=filterRows(rows,filter)
+					return f.map(function(f){return f[key];});
+				}
+				ET01Trace = {
+					name: ET01Label,
+					x:unpack(rows, 'Place (x)', ET01Label),
+					y:unpack(rows, 'Knowledge (y)', ET01Label),
+					z:unpack(rows, 'Action (z)', ET01Label),
+					mode: 'markers',
+					marker: {
+						size: 5,
+						opacity: 0.8,
+						color: ET01Color
+					},
+					type: 'scatter3d'
+
+				};
+				var data = [ET01Trace];
+				var layout = {
+					showlegend: true,
+				  legend: {
+				    x: 1,
+				    y: 0.5
+				  },
+					scene: {
+						xaxis:{
+							title: 'Place (x)',
+							range: [-1, 1]
+						},
+						yaxis:{
+							title: 'Knowledge (y)',
+							range: [-1, 1]
+						},
+						zaxis:{
+							title: 'Action (z)',
+							range: [-1, 1]
+						},
+						},
+					margin: {
+					l: 0,
+					r: 0,
+					b: 0,
+					t: 0
+				}};
+				Plotly.newPlot('plot', data, layout);
+			});
+			return true;
+		}
+
+		function ET02Plot(){
+			document.getElementById('plot').innerHTML = "";
+			d3.csv('https://raw.githubusercontent.com/lcenvs/3D-Graphing-With-Plotly-EcoTypes22-23-N2712/main/ETAll.csv', function(err, rows){
+				function unpack(rows, key, filter){
+					f=filterRows(rows,filter)
+					return f.map(function(f){return f[key];});
+				}
+				ET02Trace = {
+					name: ET02Label,
+					x:unpack(rows, 'Place (x)', ET02Label),
+					y:unpack(rows, 'Knowledge (y)', ET02Label),
+					z:unpack(rows, 'Action (z)', ET02Label),
+					mode: 'markers',
+					marker: {
+						size: 5,
+						opacity: 0.8,
+						color: ET02Color
+					},
+					type: 'scatter3d'
+
+				};
+				var data = [ET02Trace];
+				var layout = {
+					showlegend: true,
+				  legend: {
+				    x: 1,
+				    y: 0.5
+				  },
+					scene: {
+						xaxis:{
+							title: 'Place (x)',
+							range: [-1, 1]
+						},
+						yaxis:{
+							title: 'Knowledge (y)',
+							range: [-1, 1]
+						},
+						zaxis:{
+							title: 'Action (z)',
+							range: [-1, 1]
+						},
+						},
+					margin: {
+					l: 0,
+					r: 0,
+					b: 0,
+					t: 0
+				}};
+				Plotly.newPlot('plot', data, layout);
+			});
+			return true;
+		}
+
+		function ET03Plot(){
+			document.getElementById('plot').innerHTML = "";
+			d3.csv('https://raw.githubusercontent.com/lcenvs/3D-Graphing-With-Plotly-EcoTypes22-23-N2712/main/ETAll.csv', function(err, rows){
+				function unpack(rows, key, filter){
+					f=filterRows(rows,filter)
+					return f.map(function(f){return f[key];});
+				}
+				ET03Trace = {
+					name: ET03Label,
+					x:unpack(rows, 'Place (x)', ET03Label),
+					y:unpack(rows, 'Knowledge (y)', ET03Label),
+					z:unpack(rows, 'Action (z)', ET03Label),
+					mode: 'markers',
+					marker: {
+						size: 5,
+						opacity: 0.8,
+						color: ET03Color
+					},
+					type: 'scatter3d'
+
+				};
+				var data = [ET03Trace];
+				var layout = {
+					showlegend: true,
+				  legend: {
+				    x: 1,
+				    y: 0.5
+				  },
+					scene: {
+						xaxis:{
+							title: 'Place (x)',
+							range: [-1, 1]
+						},
+						yaxis:{
+							title: 'Knowledge (y)',
+							range: [-1, 1]
+						},
+						zaxis:{
+							title: 'Action (z)',
+							range: [-1, 1]
+						},
+						},
+					margin: {
+					l: 0,
+					r: 0,
+					b: 0,
+					t: 0
+				}};
+				Plotly.newPlot('plot', data, layout);
+			});
+			return true;
+		}
+
+		function ET04Plot(){
+			document.getElementById('plot').innerHTML = "";
+			d3.csv('https://raw.githubusercontent.com/lcenvs/3D-Graphing-With-Plotly-EcoTypes22-23-N2712/main/ETAll.csv', function(err, rows){
+				function unpack(rows, key, filter){
+					f=filterRows(rows,filter)
+					return f.map(function(f){return f[key];});
+				}
+				ET04Trace = {
+					name: ET04Label,
+					x:unpack(rows, 'Place (x)', ET04Label),
+					y:unpack(rows, 'Knowledge (y)', ET04Label),
+					z:unpack(rows, 'Action (z)', ET04Label),
+					mode: 'markers',
+					marker: {
+						size: 5,
+						opacity: 0.8,
+						color: ET04Color
+					},
+					type: 'scatter3d'
+
+				};
+				var data = [ET04Trace];
+				var layout = {
+					showlegend: true,
+				  legend: {
+				    x: 1,
+				    y: 0.5
+				  },
+					scene: {
+						xaxis:{
+							title: 'Place (x)',
+							range: [-1, 1]
+						},
+						yaxis:{
+							title: 'Knowledge (y)',
+							range: [-1, 1]
+						},
+						zaxis:{
+							title: 'Action (z)',
+							range: [-1, 1]
+						},
+						},
+					margin: {
+					l: 0,
+					r: 0,
+					b: 0,
+					t: 0
+				}};
+				Plotly.newPlot('plot', data, layout);
+			});
+			return true;
+		}
+
+		function ET05Plot(){
+			document.getElementById('plot').innerHTML = "";
+			d3.csv('https://raw.githubusercontent.com/lcenvs/3D-Graphing-With-Plotly-EcoTypes22-23-N2712/main/ETAll.csv', function(err, rows){
+				function unpack(rows, key, filter){
+					f=filterRows(rows,filter)
+					return f.map(function(f){return f[key];});
+				}
+				ET05Trace = {
+					name: ET05Label,
+					x:unpack(rows, 'Place (x)', ET05Label),
+					y:unpack(rows, 'Knowledge (y)', ET05Label),
+					z:unpack(rows, 'Action (z)', ET05Label),
+					mode: 'markers',
+					marker: {
+						size: 5,
+						opacity: 0.8,
+						color: ET05Color
+					},
+					type: 'scatter3d'
+
+				};
+				var data = [ET05Trace];
+				var layout = {
+					showlegend: true,
+				  legend: {
+				    x: 1,
+				    y: 0.5
+				  },
+					scene: {
+						xaxis:{
+							title: 'Place (x)',
+							range: [-1, 1]
+						},
+						yaxis:{
+							title: 'Knowledge (y)',
+							range: [-1, 1]
+						},
+						zaxis:{
+							title: 'Action (z)',
+							range: [-1, 1]
+						},
+						},
+					margin: {
+					l: 0,
+					r: 0,
+					b: 0,
+					t: 0
+				}};
+				Plotly.newPlot('plot', data, layout);
+			});
+			return true;
+		}
+
+		function showPlotAll(){
+			// w/out centroids
+
+				d3.csv('https://raw.githubusercontent.com/lcenvs/3D-Graphing-With-Plotly-EcoTypes22-23-N2712/main/ETAll.csv', function(err, rows2){
+					function unpack2(rows2, key, filter){
+						f=filterRows(rows2,filter)
+						return f.map(function(f){return f[key];});
+					}
+					ET01Trace2 = {
+						name: ET01Label,
+						x:unpack2(rows2, 'Place (x)', ET01Label),
+						y:unpack2(rows2, 'Knowledge (y)', ET01Label),
+						z:unpack2(rows2, 'Action (z)', ET01Label),
+						mode: 'markers',
+						marker: {
+							size: 5,
+							opacity: 0.8,
+						},
+						type: 'scatter3d',
+						legendgroup:  'points'
+					};
+					ET02Trace2 = {
+						name: ET02Label,
+						x:unpack2(rows2, 'Place (x)', ET02Label),
+						y:unpack2(rows2, 'Knowledge (y)', ET02Label),
+						z:unpack2(rows2, 'Action (z)', ET02Label),
+						mode: 'markers',
+						marker: {
+							size: 5,
+							opacity: 0.8,
+						},
+						type: 'scatter3d',
+						legendgroup:  'points'
+					};
+					ET03Trace2 = {
+						name: ET03Label,
+						x:unpack2(rows2, 'Place (x)', ET03Label),
+						y:unpack2(rows2, 'Knowledge (y)', ET03Label),
+						z:unpack2(rows2, 'Action (z)', ET03Label),
+						mode: 'markers',
+						marker: {
+							size: 5,
+							opacity: 0.8,
+						},
+						type: 'scatter3d',
+						legendgroup:  'points'
+					};
+					ET04Trace2 = {
+						name: ET04Label,
+						x:unpack2(rows2, 'Place (x)', ET04Label),
+						y:unpack2(rows2, 'Knowledge (y)', ET04Label),
+						z:unpack2(rows2, 'Action (z)', ET04Label),
+						mode: 'markers',
+						marker: {
+							size: 5,
+							opacity: 0.8,
+						},
+						type: 'scatter3d',
+						legendgroup:  'points'
+					};
+					ET05Trace2 = {
+						name: ET05Label,
+						x:unpack2(rows2, 'Place (x)', ET05Label),
+						y:unpack2(rows2, 'Knowledge (y)', ET05Label),
+						z:unpack2(rows2, 'Action (z)', ET05Label),
+						mode: 'markers',
+						marker: {
+							size: 5,
+							opacity: 0.8,
+						},
+						type: 'scatter3d',
+						legendgroup:  'points'
+					};
+
+
+					var data2 = [ET01Trace2, ET02Trace2, ET03Trace2, ET04Trace2, ET05Trace2];
+					var layout = {
+
+
+						showlegend: true,
+						legend: {
+							x: 1,
+							y: 0.5
+						},
+						colorway: [ET01Color, ET02Color, ET03Color, ET04Color, ET05Color],
+
+						scene: {
+							xaxis:{
+								title: 'Place (x)',
+								range: [-1, 1]
+							},
+							yaxis:{
+								title: 'Knowledge (y)',
+								range: [-1, 1]
+							},
+							zaxis:{
+								title: 'Action (z)',
+								range: [-1, 1]
+							},
+							},
+						margin: {
+						l: 0,
+						r: 0,
+						b: 0,
+						t: 0
+
+					}};
+					Plotly.newPlot('plot', data2, layout);
+				});
+
+			});
+
+			return true;
+		}
+
+	</script>
+
+</head>
+
+<body>
+	<div class="buttons">
+		<button type="button" id="Earth Spirit" onclick="ET01Plot()">Earth Action</button>
+		<button type="button" id="Ecoscience" onclick="ET02Plot()">Ecoscience</button>
+		<button type="button" id="Technoprogress" onclick="ET03Plot()">Ecospirituality</button>
+		<button type="button" id="Traditional Ways" onclick="ET04Plot()">Indigenous Justice</button>
+		<button type="button" id="Boundary" onclick="ET05Plot()">Science for Change</button>
+		<button type="button" id="All EcoTypes (2022-23; n = 2712)" onclick="showPlotAll()">Show All EcoTypes</button>
+	</div>
+	<h3 id="title">All EcoTypes (2022-23; n = 2712)</h3>
+	<div id='plot' >
+
+	</div>
+</body>
+
+<script>
+
+$( document ).ready(function() {
+	showPlotAll()
+
+	$("button").click(function(){
+		t=$(this).attr("id");
+		console.log(t);
+		$("#title").text(t);
+
+
+
+
+	});
+
+});
+
+</script>
+
+
+</html>
