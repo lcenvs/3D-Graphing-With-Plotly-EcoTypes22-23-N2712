@@ -22,7 +22,7 @@
 		var ET05Label = "Boundary";
 		var ET01Color = "#ffa600";
 		var ET02Color = "#ff6361";
-		var ET03Color = "bc5090";
+		var ET03Color = "#bc5090";
 		var ET04Color = "#58508d";
 		var ET05Color = "#003f5c";
 		var AttSize = 15;
@@ -157,7 +157,7 @@
 					marker: {
 						size: 5,
 						opacity: 0.8,
-						color: ET02Color
+						color: ET03Color
 					},
 					type: 'scatter3d'
 
@@ -301,7 +301,7 @@
 		}
 
 		function showPlotAll(){
-			// w/out centroids
+			// w/ centroids omitted
 
 				d3.csv('https://raw.githubusercontent.com/lcenvs/3D-Graphing-With-Plotly-EcoTypes22-23-N2712/main/ETAll.csv', function(err, rows){
 				function unpack(rows, key, filter){
